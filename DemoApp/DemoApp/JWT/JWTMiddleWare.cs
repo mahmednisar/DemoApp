@@ -33,6 +33,7 @@ namespace DemoApp.JWT
 
                 var jwtToken = (JwtSecurityToken)validatedToken;
                 var name = jwtToken.Claims.FirstOrDefault(x => x.Type == "name").Value;
+                context.Items.Add("Name", name);
             }
             await _next(context);
         }

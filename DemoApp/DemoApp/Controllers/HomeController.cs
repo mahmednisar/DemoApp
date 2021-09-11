@@ -7,8 +7,11 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Linq;
+using DemoApp.JWT;
+
 namespace DemoApp.Controllers
 {
+    
     public class HomeController : BaseController
     {
 
@@ -19,6 +22,7 @@ namespace DemoApp.Controllers
         }
 
         [HttpGet]
+       
         public Response GetToken(string Name)
         {
             var token = new JwtSecurityTokenHandler().WriteToken(new JwtSecurityTokenHandler().CreateToken(new SecurityTokenDescriptor
@@ -39,7 +43,8 @@ namespace DemoApp.Controllers
 
 
         [HttpGet]
-        public Response GETData(string Token)
+        [Authorize] 
+        public Response GETData()
         {
            
 
