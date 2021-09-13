@@ -46,8 +46,6 @@ namespace DemoApp.Controllers
         [Authorize] 
         public Response GETData()
         {
-           
-
             response.ResponseCode = StatusCodes.Status200OK;
             response.ResponseMessage = "";
             response.ResponseStatus = true;
